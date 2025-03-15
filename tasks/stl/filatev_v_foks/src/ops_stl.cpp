@@ -86,6 +86,7 @@ bool filatev_v_foks_stl::Focks::RunImpl() {
   std::mutex mtx;
 
   if (grid_size * grid_size * grid_size >= num_threads) {
+    std::cerr << "\nCount proc: " << num_threads << "\n";
     std::vector<std::thread> threads(num_threads);
 
     size_t steps_per_thread = grid_size * grid_size * grid_size / num_threads;
@@ -99,7 +100,6 @@ bool filatev_v_foks_stl::Focks::RunImpl() {
       thread.join();
     }
   } else {
-    std::cerr << "\nTTTT\n";
     Worker(0, grid_size * grid_size * grid_size, grid_size, mtx);
   }
 
