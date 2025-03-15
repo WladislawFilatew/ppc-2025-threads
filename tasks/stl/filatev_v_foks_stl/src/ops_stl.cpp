@@ -4,10 +4,10 @@
 #include <cmath>
 #include <cstddef>
 #include <functional>
+#include <iostream>
 #include <mutex>
 #include <thread>
 #include <vector>
-#include <iostream>
 
 #include "core/util/include/util.hpp"
 
